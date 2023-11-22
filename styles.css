@@ -1,0 +1,200 @@
+/* Reset some basic elements */
+body, h1, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', 'Source Code Pro', sans-serif;
+}
+
+/* Apply a box-sizing rule */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.62;
+    color: #fff;
+}
+
+.video-wrapper {
+    position: fixed; /* Changed to fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -2; /* Ensures that the video stays in the background */
+}
+
+#background-video {
+    position: absolute;
+    width: 100vw;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 100%;
+    z-index: -1;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(0deg, #000 0%, rgba(104, 104, 104, 0) 100%);
+    z-index: 0; /* Should be above the video but below the content */
+}
+
+
+
+.content-wrapper {
+    position: relative; /* This ensures that content is positioned relative to the viewport */
+    z-index: 2; /* This should be above the video and overlay */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    z-index: 1
+}
+
+.header {
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: transparent;
+    z-index: 2;
+    display: flex; /* Aligns children (logo and social media) in a row */
+    justify-content: space-between; /* Places logo on left, icons on right */
+    align-items: center; /* Vertically centers items */
+}
+
+.logo-img {
+    height: 20px; /* Adjust height as needed */
+    width: auto; /* Maintains aspect ratio */
+}
+
+.social-media {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    height: 24px; /* Or the size of your icons */
+    width: 24px; /* Or the size of your icons */
+    margin-left: 10px; /* Space between icons */
+}
+
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding: 0 1rem; /* Add padding to ensure content does not touch the sides */
+    
+}
+
+.main-content h1 {
+    font-family:'Source Code Pro', monospace;
+    font-size: 2.5rem; /* Adjust as needed */
+    margin-bottom: 0.5rem; /* Adjust as needed */
+}
+
+.main-content p {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1rem; /* Adjust as needed */
+    margin-top: 0rem; /* Adjust as needed */
+    margin-bottom: 1rem; /* Adjust as needed */
+}
+
+
+.date-box {
+    background-color: white;
+    color: black;
+    font-size: 1.25rem; /* Adjust font size as needed */
+    padding: 10px 20px; /* Add some padding inside the box */
+    margin: 20px 0; /* Add some margin for spacing */
+    border-radius: 5px; /* Optional: for rounded corners */
+    font-family:'Source Code Pro', monospace;
+}
+
+
+
+.footer {
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: transparent; /* If you want a transparent background */
+    display: flex;
+    justify-content: flex-end; /* Aligns children to the right side */
+    align-items: center; /* Aligns children vertically */
+    z-index: 2;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+}
+
+.social-media {
+    display: flex;
+    align-items: center;
+    margin-left: 10px; /* Space between text and icons */
+}
+
+.icon {
+    width: 24px; /* Or the size of your icons */
+    height: 24px; /* Or the size of your icons */
+    margin-left: 10px; /* Space between icons */
+}
+
+.footer p {
+    margin: 0;
+    display: inline; /* Keep the paragraph inline with icons */
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 0.5rem;
+    }
+
+    .header, .main-content, .footer {
+        padding: 1rem;
+    }
+
+    .notify-form input,
+    .notify-form button {
+        margin: 0.25rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .main-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .main-content p {
+        font-size: 0.9rem;
+    }
+}
