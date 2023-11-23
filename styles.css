@@ -36,15 +36,18 @@ body {
     z-index: -2; /* Ensures that the video stays in the background */
 }
 
+
 #background-video {
     position: absolute;
-    width: 100vw;
-    left: 50%;
+    width: 100vw; /* Ensure it spans the full viewport width */
+    height: 100vh; /* Ensure it spans the full viewport height */
     top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    min-height: 100%;
+    object-fit: cover; /* Cover the entire area without stretching */
     z-index: -1;
 }
+
 
 .video-overlay {
     position: absolute;
